@@ -31,4 +31,16 @@ const insertEmployee = async (req, res) => {
     }
 };
 
-module.exports = { index, insertEmployee };
+const updateEmployee=async(req,res)=>{
+    try{
+        const userData = await employeeModel.findOne({email:req.body.email}) 
+        userData.name = req.body.name
+        const a1 = await userData.save()
+        res.json(a1)
+    }catch(err){
+        res.send(err)
+    }
+};
+
+
+module.exports = { index, insertEmployee,updateEmployee};

@@ -14,4 +14,6 @@ router.get('/data', apicontroller.index)
 
 router.post('/insert',apicontroller.insertEmployee)
 
+router.post('/update',apicontroller.updateEmployee)
+
 module.exports = router
